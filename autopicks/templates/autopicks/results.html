@@ -1,0 +1,7 @@
+<h1>{{ Document.Document_text }}</h1>
+<ul>
+{% for choice in Document.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.uploads }} upload{{ choice.uploads|pluralize }}</li>
+{% endfor %}
+</ul>
+<a href="{% url 'autopicks:detail' Document.id %}">Upload again?</a>

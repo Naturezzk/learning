@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+{% if latest_document_list %}
+    <ul>
+    {% for document in latest_document_list %}
+         <li><a href="{% url 'detail' document.id %}">{{ document.document_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No autopicks are available.</p>
+{% endif %}
+
+
